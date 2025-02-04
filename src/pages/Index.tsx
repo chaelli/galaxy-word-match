@@ -70,14 +70,16 @@ export default function Index() {
       toast({
         title: "Super gemacht! 🌟",
         description: "Das ist richtig!",
-        className: "fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-500 text-white border-none",
+        duration: 1500,
+        className: "fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-500 text-white border-none shadow-lg rounded-lg p-4",
       });
     } else {
       toast({
         title: "Nicht ganz richtig",
         description: "Versuche es noch einmal!",
+        duration: 1500,
         variant: "destructive",
-        className: "fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2",
+        className: "fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-lg rounded-lg p-4",
       });
       setTimeout(() => setSelectedIndex(null), 1000);
     }

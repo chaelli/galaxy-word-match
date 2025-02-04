@@ -1,4 +1,4 @@
-const UNSPLASH_API_KEY = 'XdxNXqZQVLJpxOKuLF_9_TbZqA_WXz8_YhNRQ4_Xb7Y';
+const UNSPLASH_API_KEY = 'U6yaan0z2rmNrUd-Et8nbngdEdUgDnhnWmqoSZ-rCb4';
 
 export async function searchImages(query: string): Promise<string[]> {
   const response = await fetch(

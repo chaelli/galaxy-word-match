@@ -23,7 +23,7 @@ export const words: Word[] = [
   { german: 'Gelb', searchTerm: 'yellow sun', category: 'colors' },
   { german: 'Grün', searchTerm: 'green grass', category: 'colors' },
   { german: 'Schwarz', searchTerm: 'black color', category: 'colors' },
-  { german: 'Weiß', searchTerm: 'white snow', category: 'colors' },
+  { german: 'Weiss', searchTerm: 'white snow', category: 'colors' },
   { german: 'Lila', searchTerm: 'purple flower', category: 'colors' },
   { german: 'Orange', searchTerm: 'orange fruit', category: 'colors' },
   { german: 'Braun', searchTerm: 'brown wood', category: 'colors' },
@@ -35,7 +35,7 @@ export const words: Word[] = [
   { german: 'Lastwagen', searchTerm: 'truck', category: 'cars' },
   { german: 'Motorrad', searchTerm: 'motorcycle', category: 'cars' },
   { german: 'Bus', searchTerm: 'bus vehicle', category: 'cars' },
-  { german: 'Taxi', searchTerm: 'taxi cab', category: 'cars' },
+  { german: 'Taxi', searchTerm: 'cab', category: 'cars' },
   { german: 'Krankenwagen', searchTerm: 'ambulance', category: 'cars' },
   { german: 'Feuerwehr', searchTerm: 'fire truck', category: 'cars' },
   
@@ -51,16 +51,16 @@ export const words: Word[] = [
   { german: 'Meteorit', searchTerm: 'meteorite', category: 'space' },
 
   // Animals
-  { german: 'Hund', searchTerm: 'dog animal', category: 'animals' },
-  { german: 'Katze', searchTerm: 'cat animal', category: 'animals' },
-  { german: 'Pferd', searchTerm: 'horse animal', category: 'animals' },
-  { german: 'Vogel', searchTerm: 'bird animal', category: 'animals' },
-  { german: 'Fisch', searchTerm: 'fish animal', category: 'animals' },
-  { german: 'Kaninchen', searchTerm: 'rabbit animal', category: 'animals' },
-  { german: 'Elefant', searchTerm: 'elephant animal', category: 'animals' },
-  { german: 'Löwe', searchTerm: 'lion animal', category: 'animals' },
-  { german: 'Giraffe', searchTerm: 'giraffe animal', category: 'animals' },
-  { german: 'Pinguin', searchTerm: 'penguin animal', category: 'animals' },
+  { german: 'Hund', searchTerm: 'dog', category: 'animals' },
+  { german: 'Katze', searchTerm: 'cat', category: 'animals' },
+  { german: 'Pferd', searchTerm: 'horse', category: 'animals' },
+  { german: 'Vogel', searchTerm: 'bird', category: 'animals' },
+  { german: 'Fisch', searchTerm: 'fish', category: 'animals' },
+  { german: 'Kaninchen', searchTerm: 'rabbit', category: 'animals' },
+  { german: 'Elefant', searchTerm: 'elephant', category: 'animals' },
+  { german: 'Löwe', searchTerm: 'lion', category: 'animals' },
+  { german: 'Giraffe', searchTerm: 'giraffe', category: 'animals' },
+  { german: 'Pinguin', searchTerm: 'penguin', category: 'animals' },
 ];
 
 export function getRandomWord(): Word {

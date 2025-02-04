@@ -70,12 +70,14 @@ export default function Index() {
       toast({
         title: "Super gemacht! 🌟",
         description: "Das ist richtig!",
+        className: "fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-500 text-white border-none",
       });
     } else {
       toast({
         title: "Nicht ganz richtig",
         description: "Versuche es noch einmal!",
-        variant: "destructive"
+        variant: "destructive",
+        className: "fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2",
       });
       setTimeout(() => setSelectedIndex(null), 1000);
     }

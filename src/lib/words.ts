@@ -1,4 +1,4 @@
-export type WordCategory = 'planets' | 'colors' | 'cars' | 'space';
+export type WordCategory = 'planets' | 'colors' | 'cars' | 'space' | 'animals';
 
 export interface Word {
   german: string;
@@ -49,6 +49,18 @@ export const words: Word[] = [
   { german: 'Teleskop', searchTerm: 'telescope', category: 'space' },
   { german: 'Raumstation', searchTerm: 'space station', category: 'space' },
   { german: 'Meteorit', searchTerm: 'meteorite', category: 'space' },
+
+  // Animals
+  { german: 'Hund', searchTerm: 'dog animal', category: 'animals' },
+  { german: 'Katze', searchTerm: 'cat animal', category: 'animals' },
+  { german: 'Pferd', searchTerm: 'horse animal', category: 'animals' },
+  { german: 'Vogel', searchTerm: 'bird animal', category: 'animals' },
+  { german: 'Fisch', searchTerm: 'fish animal', category: 'animals' },
+  { german: 'Kaninchen', searchTerm: 'rabbit animal', category: 'animals' },
+  { german: 'Elefant', searchTerm: 'elephant animal', category: 'animals' },
+  { german: 'Löwe', searchTerm: 'lion animal', category: 'animals' },
+  { german: 'Giraffe', searchTerm: 'giraffe animal', category: 'animals' },
+  { german: 'Pinguin', searchTerm: 'penguin animal', category: 'animals' },
 ];
 
 export function getRandomWord(): Word {

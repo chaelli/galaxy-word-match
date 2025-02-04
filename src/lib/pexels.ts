@@ -1,11 +1,11 @@
-const PEXELS_API_KEY = 'CrkNg7ascphqbzqJREba99eCeNIfQvHleyWSEDy5wRhuN4XdgtLWWlgF';
+const UNSPLASH_API_KEY = 'XdxNXqZQVLJpxOKuLF_9_TbZqA_WXz8_YhNRQ4_Xb7Y';
 
 export async function searchImages(query: string): Promise<string[]> {
   const response = await fetch(
-    `https://api.pexels.com/v1/search?query=${encodeURIComponent(query)}&per_page=5`,
+    `https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&per_page=5`,
     {
       headers: {
-        Authorization: PEXELS_API_KEY,
+        Authorization: `Client-ID ${UNSPLASH_API_KEY}`,
       },
     }
   );
@@ -15,5 +15,5 @@ export async function searchImages(query: string): Promise<string[]> {
   }
 
   const data = await response.json();
-  return data.photos.map((photo: any) => photo.src.medium);
+  return data.results.map((photo: any) => photo.urls.regular);
 }

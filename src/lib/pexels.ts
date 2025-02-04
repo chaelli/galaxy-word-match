@@ -1,4 +1,4 @@
-const PEXELS_API_KEY = 'your_pexels_api_key';
+const PEXELS_API_KEY = 'CrkNg7ascphqbzqJREba99eCeNIfQvHleyWSEDy5wRhuN4XdgtLWWlgF';
 
 export async function searchImages(query: string): Promise<string[]> {
   const response = await fetch(

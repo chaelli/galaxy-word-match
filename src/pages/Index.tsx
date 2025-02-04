@@ -32,16 +32,18 @@ export default function Index() {
       const wrongImage1 = (await searchImages(wrongWords[0].searchTerm))[0];
       const wrongImage2 = (await searchImages(wrongWords[1].searchTerm))[0];
       
-      // Shuffle images and keep track of correct index
+      // Create array with all images
       const allImages = [correctImage, wrongImage1, wrongImage2];
-      const shuffledImages = [...allImages];
-      for (let i = shuffledImages.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffledImages[i], shuffledImages[j]] = [shuffledImages[j], shuffledImages[i]];
-        if (j === 0) setCorrectImageIndex(i);
-        if (i === 0) setCorrectImageIndex(j);
-      }
       
+      // Shuffle images
+      const shuffledImages = [...allImages];
+      const newCorrectIndex = Math.floor(Math.random() * 3); // Generate random index (0-2)
+      
+      // Swap correct image to random position
+      [shuffledImages[0], shuffledImages[newCorrectIndex]] = 
+        [shuffledImages[newCorrectIndex], shuffledImages[0]];
+      
+      setCorrectImageIndex(newCorrectIndex);
       setCurrentWord(word);
       setImages(shuffledImages);
     } catch (error) {
@@ -75,7 +77,6 @@ export default function Index() {
         description: "Versuche es noch einmal!",
         variant: "destructive"
       });
-      // Remove the selected index after a wrong answer so they can try again
       setTimeout(() => setSelectedIndex(null), 1000);
     }
   };

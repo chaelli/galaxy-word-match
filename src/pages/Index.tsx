@@ -4,7 +4,7 @@ import { searchImages } from '@/lib/pexels';
 import { GameCard } from '@/components/GameCard';
 import { StarParticles } from '@/components/StarParticles';
 import { Switch } from '@/components/ui/switch';
-import { useToast } from '@/components/ui/use-toast';
+import { useToast } from '@/hooks/use-toast';
 
 export default function Index() {
   const [currentWord, setCurrentWord] = useState<Word | null>(null);
@@ -12,6 +12,7 @@ export default function Index() {
   const [loading, setLoading] = useState(true);
   const [score, setScore] = useState(0);
   const [isUpperCase, setIsUpperCase] = useState(false);
+  const [correctImageIndex, setCorrectImageIndex] = useState<number>(0);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const { toast } = useToast();
 
@@ -31,12 +32,18 @@ export default function Index() {
       const wrongImage1 = (await searchImages(wrongWords[0].searchTerm))[0];
       const wrongImage2 = (await searchImages(wrongWords[1].searchTerm))[0];
       
-      // Shuffle images
-      const allImages = [correctImage, wrongImage1, wrongImage2]
-        .sort(() => Math.random() - 0.5);
+      // Shuffle images and keep track of correct index
+      const allImages = [correctImage, wrongImage1, wrongImage2];
+      const shuffledImages = [...allImages];
+      for (let i = shuffledImages.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledImages[i], shuffledImages[j]] = [shuffledImages[j], shuffledImages[i]];
+        if (j === 0) setCorrectImageIndex(i);
+        if (i === 0) setCorrectImageIndex(j);
+      }
       
       setCurrentWord(word);
-      setImages(allImages);
+      setImages(shuffledImages);
     } catch (error) {
       toast({
         title: "Fehler beim Laden der Bilder",
@@ -54,7 +61,7 @@ export default function Index() {
 
   const handleSelect = (index: number) => {
     setSelectedIndex(index);
-    const isCorrect = images[index] === images[0];
+    const isCorrect = index === correctImageIndex;
     
     if (isCorrect) {
       setScore(s => s + 1);
@@ -109,7 +116,7 @@ export default function Index() {
             <GameCard
               key={image}
               image={image}
-              isCorrect={index === 0}
+              isCorrect={index === correctImageIndex}
               onSelect={() => handleSelect(index)}
               disabled={selectedIndex !== null}
             />

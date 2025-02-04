@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Word, getRandomWord, getWrongWords } from '@/lib/words';
-import { searchImages } from '@/lib/pexels';
 import { GameCard } from '@/components/GameCard';
 import { StarParticles } from '@/components/StarParticles';
 import { Switch } from '@/components/ui/switch';
@@ -26,11 +25,11 @@ export default function Index() {
     try {
       // Get correct image
       const correctImages = await searchImages(word.searchTerm);
-      const correctImage = correctImages[0];
+      const correctImage = word.path;
       
       // Get wrong images
-      const wrongImage1 = (await searchImages(wrongWords[0].searchTerm))[0];
-      const wrongImage2 = (await searchImages(wrongWords[1].searchTerm))[0];
+      const wrongImage1 = wrongWords[0].path
+      const wrongImage2 = wrongWords[1].path
       
       // Create array with all images
       const allImages = [correctImage, wrongImage1, wrongImage2];

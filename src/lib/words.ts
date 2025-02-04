@@ -2,65 +2,56 @@ export type WordCategory = 'planets' | 'colors' | 'cars' | 'space' | 'animals';
 
 export interface Word {
   german: string;
-  searchTerm: string;
+  path: string;
   category: WordCategory;
 }
 
 export const words: Word[] = [
-  // Planets
-  { german: 'Erde', searchTerm: 'earth planet', category: 'planets' },
-  { german: 'Mars', searchTerm: 'mars planet', category: 'planets' },
-  { german: 'Jupiter', searchTerm: 'jupiter planet', category: 'planets' },
-  { german: 'Saturn', searchTerm: 'saturn planet', category: 'planets' },
-  { german: 'Venus', searchTerm: 'venus planet', category: 'planets' },
-  { german: 'Merkur', searchTerm: 'mercury planet', category: 'planets' },
-  { german: 'Neptun', searchTerm: 'neptune planet', category: 'planets' },
-  { german: 'Uranus', searchTerm: 'uranus planet', category: 'planets' },
-  
   // Colors
-  { german: 'Blau', searchTerm: 'blue sky', category: 'colors' },
-  { german: 'Rot', searchTerm: 'red flower', category: 'colors' },
-  { german: 'Gelb', searchTerm: 'yellow sun', category: 'colors' },
-  { german: 'Grün', searchTerm: 'green grass', category: 'colors' },
-  { german: 'Schwarz', searchTerm: 'black color', category: 'colors' },
-  { german: 'Weiss', searchTerm: 'white snow', category: 'colors' },
-  { german: 'Lila', searchTerm: 'purple flower', category: 'colors' },
-  { german: 'Orange', searchTerm: 'orange fruit', category: 'colors' },
-  { german: 'Braun', searchTerm: 'brown wood', category: 'colors' },
-  { german: 'Rosa', searchTerm: 'pink flower', category: 'colors' },
+  { german: 'Blau', path: 'color/blue.jpg', category: 'colors' },
+  { german: 'Rot', path: 'color/red.jpg', category: 'colors' },
+  { german: 'Gelb', path: 'color/yellow.jpg', category: 'colors' },
+  { german: 'Grün', path: 'color/green.jpg', category: 'colors' },
+  { german: 'Schwarz', path: 'color/black.jpg', category: 'colors' },
+  { german: 'Weiss', path: 'color/white.jpg', category: 'colors' },
+  { german: 'Orange', path: 'color/orange.jpg', category: 'colors' },
   
   // Cars
-  { german: 'Auto', searchTerm: 'car', category: 'cars' },
-  { german: 'Rennwagen', searchTerm: 'race car', category: 'cars' },
-  { german: 'Lastwagen', searchTerm: 'truck', category: 'cars' },
-  { german: 'Motorrad', searchTerm: 'motorcycle', category: 'cars' },
-  { german: 'Bus', searchTerm: 'bus vehicle', category: 'cars' },
-  { german: 'Taxi', searchTerm: 'cab', category: 'cars' },
-  { german: 'Krankenwagen', searchTerm: 'ambulance', category: 'cars' },
-  { german: 'Feuerwehr', searchTerm: 'fire truck', category: 'cars' },
+  { german: 'Auto', path: 'cars/car.jpg', category: 'cars' },
+  { german: 'Rennwagen', path: 'cars/race.jpg', category: 'cars' },
+  { german: 'Lastwagen', path: 'cars/truck.jpg', category: 'cars' },
+  { german: 'Motorrad', path: 'cars/motorcycle.jpg', category: 'cars' },
+  { german: 'Bus', path: 'cars/bus.jpg', category: 'cars' },
+  { german: 'Taxi', path: 'cars/cab.jpg', category: 'cars' },
+  { german: 'Krankenwagen', path: 'cars/ambulance.jpg', category: 'cars' },
+  { german: 'Feuerwehr', path: 'cars/fire.jpg', category: 'cars' },
   
   // Space
-  { german: 'Stern', searchTerm: 'star sky', category: 'space' },
-  { german: 'Rakete', searchTerm: 'rocket', category: 'space' },
-  { german: 'Astronaut', searchTerm: 'astronaut', category: 'space' },
-  { german: 'Satellit', searchTerm: 'satellite space', category: 'space' },
-  { german: 'Komet', searchTerm: 'comet space', category: 'space' },
-  { german: 'Galaxie', searchTerm: 'galaxy space', category: 'space' },
-  { german: 'Teleskop', searchTerm: 'telescope', category: 'space' },
-  { german: 'Raumstation', searchTerm: 'space station', category: 'space' },
-  { german: 'Meteorit', searchTerm: 'meteorite', category: 'space' },
+  { german: 'Erde', path: 'space/earth.jpg', category: 'planets' },
+  { german: 'Mars', path: 'space/mars.jpg', category: 'planets' },
+  { german: 'Mond', path: 'space/moon.jpg', category: 'planets' },
+  { german: 'Sonne', path: 'space/sun.jpg', category: 'planets' },
+  { german: 'Sterne', path: 'star sky', category: 'space' },
+  { german: 'Rakete', path: 'rocket', category: 'space' },
+  { german: 'Astronaut', path: 'astronaut', category: 'space' },
+  { german: 'Satellit', path: 'satellite space', category: 'space' },
+  { german: 'Komet', path: 'comet space', category: 'space' },
+  { german: 'Galaxie', path: 'galaxy space', category: 'space' },
+  { german: 'Teleskop', path: 'telescope', category: 'space' },
+  { german: 'Raumstation', path: 'space station', category: 'space' },
+  { german: 'Meteorit', path: 'meteorite', category: 'space' },
 
   // Animals
-  { german: 'Hund', searchTerm: 'dog', category: 'animals' },
-  { german: 'Katze', searchTerm: 'cat', category: 'animals' },
-  { german: 'Pferd', searchTerm: 'horse', category: 'animals' },
-  { german: 'Vogel', searchTerm: 'bird', category: 'animals' },
-  { german: 'Fisch', searchTerm: 'fish', category: 'animals' },
-  { german: 'Kaninchen', searchTerm: 'rabbit', category: 'animals' },
-  { german: 'Elefant', searchTerm: 'elephant', category: 'animals' },
-  { german: 'Löwe', searchTerm: 'lion', category: 'animals' },
-  { german: 'Giraffe', searchTerm: 'giraffe', category: 'animals' },
-  { german: 'Pinguin', searchTerm: 'penguin', category: 'animals' },
+  { german: 'Hund', path: 'dog', category: 'animals' },
+  { german: 'Katze', path: 'cat', category: 'animals' },
+  { german: 'Pferd', path: 'horse', category: 'animals' },
+  { german: 'Vogel', path: 'bird', category: 'animals' },
+  { german: 'Fisch', path: 'fish', category: 'animals' },
+  { german: 'Kaninchen', path: 'rabbit', category: 'animals' },
+  { german: 'Elefant', path: 'elephant', category: 'animals' },
+  { german: 'Löwe', path: 'lion', category: 'animals' },
+  { german: 'Giraffe', path: 'giraffe', category: 'animals' },
+  { german: 'Pinguin', path: 'penguin', category: 'animals' },
 ];
 
 export function getRandomWord(): Word {

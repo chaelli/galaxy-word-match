@@ -75,6 +75,8 @@ export default function Index() {
         description: "Versuche es noch einmal!",
         variant: "destructive"
       });
+      // Remove the selected index after a wrong answer so they can try again
+      setTimeout(() => setSelectedIndex(null), 1000);
     }
   };
 
@@ -114,11 +116,11 @@ export default function Index() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {images.map((image, index) => (
             <GameCard
-              key={image}
+              key={`${image}-${index}`}
               image={image}
               isCorrect={index === correctImageIndex}
               onSelect={() => handleSelect(index)}
-              disabled={selectedIndex !== null}
+              disabled={selectedIndex === correctImageIndex}
             />
           ))}
         </div>

@@ -51,7 +51,8 @@ export default function Index() {
         title: "Fehler beim Laden der Bilder",
         description: "Bitte versuche es erneut",
         variant: "destructive",
-        className: "fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2",
+        className:
+          "fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2",
       });
     } finally {
       setLoading(false);
@@ -72,7 +73,8 @@ export default function Index() {
         title: "Super gemacht! 🌟",
         description: "Das ist richtig!",
         duration: 1500,
-        className: "fixed top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-500 text-white border-none shadow-lg rounded-lg p-4",
+        className:
+          "fixed top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-500 text-white border-none shadow-lg rounded-lg p-4",
       });
     } else {
       toast({
@@ -80,7 +82,8 @@ export default function Index() {
         description: "Versuche es noch einmal!",
         duration: 1500,
         variant: "destructive",
-        className: "fixed top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-lg rounded-lg p-4",
+        className:
+          "fixed top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-lg rounded-lg p-4",
       });
       setTimeout(() => setSelectedIndex(null), 1000);
     }
@@ -105,7 +108,7 @@ export default function Index() {
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="text-secondary">GROßBUCHSTABEN</span>
+            <span className="text-secondary">GROSSBUCHSTABEN</span>
             <Switch checked={isUpperCase} onCheckedChange={setIsUpperCase} />
           </div>
         </div>

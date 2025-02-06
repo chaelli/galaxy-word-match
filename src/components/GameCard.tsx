@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 interface GameCardProps {
   image: string;
@@ -14,9 +15,7 @@ export function GameCard({
   onSelect,
   disabled,
 }: GameCardProps) {
-  const [status, setStatus] = useState<"idle" | "correct" | "incorrect">(
-    "idle"
-  );
+  const [status, setStatus] = useState<"idle" | "correct" | "incorrect">("idle");
 
   const handleClick = () => {
     if (disabled) return;
@@ -33,17 +32,26 @@ export function GameCard({
     <div
       onClick={handleClick}
       className={cn(
-        "choice-card",
+        "choice-card relative h-48",
         status === "correct" && "correct",
         status === "incorrect" && "incorrect",
         disabled && "opacity-50 cursor-not-allowed"
       )}
     >
-      <img
-        src={`images/${image}`}
-        alt="Choice"
-        className="w-full h-48 object-cover rounded-lg"
+      {/* Blurred background */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center blur-md opacity-50 scale-105"
+        style={{ backgroundImage: `url(images/${image})` }}
       />
+      
+      {/* Container for centered image */}
+      <div className="absolute inset-0 flex items-center justify-center p-2">
+        <img
+          src={`images/${image}`}
+          alt="Choice"
+          className="max-w-full max-h-full object-contain rounded-lg"
+        />
+      </div>
     </div>
   );
 }

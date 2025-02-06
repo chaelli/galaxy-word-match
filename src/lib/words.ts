@@ -15,7 +15,7 @@ export const words: Word[] = [
   { german: 'Schwarz', path: 'color/black.jpg', category: 'colors' },
   { german: 'Weiss', path: 'color/white.jpg', category: 'colors' },
   { german: 'Orange', path: 'color/orange.jpg', category: 'colors' },
-  
+
   // Cars
   { german: 'Auto', path: 'cars/car.jpg', category: 'cars' },
   { german: 'Rennwagen', path: 'cars/race.jpg', category: 'cars' },
@@ -25,12 +25,12 @@ export const words: Word[] = [
   { german: 'Taxi', path: 'cars/cab.jpg', category: 'cars' },
   { german: 'Krankenwagen', path: 'cars/ambulance.jpg', category: 'cars' },
   { german: 'Feuerwehr', path: 'cars/fire.jpg', category: 'cars' },
-  
+
   // Space
-  { german: 'Erde', path: 'space/earth.jpg', category: 'planets' },
-  { german: 'Mars', path: 'space/mars.jpg', category: 'planets' },
-  { german: 'Mond', path: 'space/moon.jpg', category: 'planets' },
-  { german: 'Sonne', path: 'space/sun.jpg', category: 'planets' },
+  { german: 'Erde', path: 'space/earth.jpg', category: 'space' },
+  { german: 'Mars', path: 'space/mars.jpg', category: 'space' },
+  { german: 'Mond', path: 'space/moon.jpg', category: 'space' },
+  { german: 'Sonne', path: 'space/sun.jpg', category: 'space' },
   { german: 'Sterne', path: 'space/star.jpg', category: 'space' },
   { german: 'Rakete', path: 'space/rocket.jpg', category: 'space' },
   { german: 'Astronaut', path: 'space/astronaut.jpg', category: 'space' },
@@ -59,10 +59,10 @@ export function getRandomWord(): Word {
 }
 
 export function getWrongWords(currentWord: Word): Word[] {
-  const sameCategory = words.filter(w => 
+  const sameCategory = words.filter(w =>
     w.category === currentWord.category && w.german !== currentWord.german
   );
-  
+
   const shuffled = [...sameCategory].sort(() => Math.random() - 0.5);
   return shuffled.slice(0, 2);
 }

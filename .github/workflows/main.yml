@@ -31,11 +31,12 @@ jobs:
       - name: Build project
         run: npm run build
         
-      - name: Download artifact
-        uses: actions/download-artifact@v4
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v4
         with:
           name: github-pages
           path: ./dist
+          retention-days: 5
 
   deploy:
     name: Deploy

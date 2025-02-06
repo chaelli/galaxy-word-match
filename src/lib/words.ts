@@ -31,7 +31,7 @@ export const words: Word[] = [
   { german: 'Mars', path: 'space/mars.jpg', category: 'space' },
   { german: 'Mond', path: 'space/moon.jpg', category: 'space' },
   { german: 'Sonne', path: 'space/sun.jpg', category: 'space' },
-  { german: 'Sterne', path: 'space/star.jpg', category: 'space' },
+  { german: 'Sterne', path: 'space/stars.jpg', category: 'space' },
   { german: 'Rakete', path: 'space/rocket.jpg', category: 'space' },
   { german: 'Astronaut', path: 'space/astronaut.jpg', category: 'space' },
   { german: 'Satellit', path: 'space/satellite.jpg', category: 'space' },

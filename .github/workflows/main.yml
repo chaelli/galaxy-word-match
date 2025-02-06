@@ -52,12 +52,20 @@ jobs:
         with:
           name: github-pages
           path: ./dist
-
+      
+      - name: Check for symlinks or hard links
+        run: find ./dist -type l -exec ls -l {} \;
+        
+      - name: Check deployed files
+        run: ls -R ./dist
+        
+      - name: Clean up unnecessary files
+        run: rm -rf ./dist/node_modules ./dist/.git
+        
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4.0.5
-        with:
-          artifact_path: ./dist
+          

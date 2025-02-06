@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { cn } from '@/lib/utils';
+import { useState } from "react";
+import { cn } from "@/lib/utils";
 
 interface GameCardProps {
   image: string;
@@ -8,16 +8,23 @@ interface GameCardProps {
   disabled: boolean;
 }
 
-export function GameCard({ image, isCorrect, onSelect, disabled }: GameCardProps) {
-  const [status, setStatus] = useState<'idle' | 'correct' | 'incorrect'>('idle');
+export function GameCard({
+  image,
+  isCorrect,
+  onSelect,
+  disabled,
+}: GameCardProps) {
+  const [status, setStatus] = useState<"idle" | "correct" | "incorrect">(
+    "idle"
+  );
 
   const handleClick = () => {
     if (disabled) return;
-    
+
     if (isCorrect) {
-      setStatus('correct');
+      setStatus("correct");
     } else {
-      setStatus('incorrect');
+      setStatus("incorrect");
     }
     onSelect();
   };
@@ -26,14 +33,14 @@ export function GameCard({ image, isCorrect, onSelect, disabled }: GameCardProps
     <div
       onClick={handleClick}
       className={cn(
-        'choice-card',
-        status === 'correct' && 'correct',
-        status === 'incorrect' && 'incorrect',
-        disabled && 'opacity-50 cursor-not-allowed'
+        "choice-card",
+        status === "correct" && "correct",
+        status === "incorrect" && "incorrect",
+        disabled && "opacity-50 cursor-not-allowed"
       )}
     >
       <img
-        src={image}
+        src={`images/${image}`}
         alt="Choice"
         className="w-full h-48 object-cover rounded-lg"
       />

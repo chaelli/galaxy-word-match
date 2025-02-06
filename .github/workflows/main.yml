@@ -5,6 +5,11 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write  # Erforderlich für `actions/deploy-pages`
+
 jobs:
   build:
     name: Build
@@ -37,24 +42,22 @@ jobs:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: production-files
           path: ./dist
-          
-      - name: Check artifact structure
-        run: ls -R ./dist/production-files
-        
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v4
+
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+        id: deployment
+        uses: actions/deploy-pages@v4.0.5
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/production-files
-          enable_jekyll: false
+          artifact_path: ./dist

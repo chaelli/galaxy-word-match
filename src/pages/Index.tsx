@@ -102,7 +102,7 @@ export default function Index() {
       <StarParticles />
 
       <div className="max-w-4xl mx-auto">
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex justify-between items-center mb-2">
           <div className="text-2xl font-bold text-secondary">
             Punkte: {score}
           </div>
@@ -114,7 +114,7 @@ export default function Index() {
         </div>
 
         <div className="text-center mb-12">
-          <h1 className="text-6xl font-bold text-secondary mb-8">
+          <h1 className="text-6xl font-bold text-secondary mb-4">
             {isUpperCase
               ? currentWord?.german.toUpperCase()
               : currentWord?.german}

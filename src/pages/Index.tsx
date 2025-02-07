@@ -98,7 +98,7 @@ export default function Index() {
   }
 
   return (
-    <div className="min-h-screen p-8">
+    <div className="min-h-screen p-1">
       <StarParticles />
 
       <div className="max-w-4xl mx-auto">
@@ -113,7 +113,7 @@ export default function Index() {
           </div>
         </div>
 
-        <div className="text-center mb-12">
+        <div className="text-center mb-4">
           <h1 className="text-6xl font-bold text-secondary mb-4">
             {isUpperCase
               ? currentWord?.german.toUpperCase()
@@ -133,7 +133,7 @@ export default function Index() {
           ))}
         </div>
 
-        <div className="text-center mt-8">
+        <div className="text-center mt-4">
           <button
             onClick={loadNewWord}
             className="bg-secondary text-primary font-bold py-3 px-6 rounded-lg text-lg hover:bg-opacity-90 transition-colors"
